@@ -11,12 +11,12 @@ const TopBar = () => {
             </div>
             <div className="basis-2/5"/>
             <div className="flex flex-row-reverse basis-1/5 self-center space-x-3 space-x-reverse">
-                <div className="w-4 h-4 relative">
+                <div className="w-5 h-5 sm:w-8 sm:h-8 relative">
                     <ChangeViewButton 
                     src = "/bx-list-ul.svg" 
                     alt = "Change view to simple list"/>
                 </div>
-                <div className="w-4 h-4 relative">
+                <div className="w-5 h-5 sm:w-8 sm:h-8 relative">
                     <ChangeViewButton 
                     src = "/bx-photo-album.svg" 
                     alt = "Change view to photo list"/>

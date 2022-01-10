@@ -1,12 +1,15 @@
 import React from "react";
+import CarElement from '../../components/Car/carElement'
 
 const HomeContent = ({data}) => {
     return (
-        <ul className = "list-disc">
-            {data.warehouses.map((warehouse , index) => (
-                <li key={index}>{warehouse.name}</li>
-            ))}
-        </ul>
+        <>
+        {data.warehouses.map(warehouse => (
+            warehouse.carsInWarehouse.vehicles.map(car => (
+                <CarElement key={car.id} car = {car} className = "m-2"/>
+            ))
+        ))}
+        </>
     )
 }
 
