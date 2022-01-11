@@ -3,13 +3,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import HomeContent from '../components/Home/homeContent'
 import Logo from '../components/Logo/logo'
+import NavBarMobile from '../components/NavBar/navBar'
 import TopBar from '../components/TopBar/TopBar'
 
 export default function Home(warehouses, cars) {
   return (
-    <div>
+    <div className='flex flex-col bg-slate-200'>
       <TopBar/>
       <HomeContent data={warehouses}/>
+      <NavBarMobile/>
     </div>
   )
 }
