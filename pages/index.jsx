@@ -5,10 +5,11 @@ import HomeContent from '../components/Home/homeContent'
 import Logo from '../components/Logo/logo'
 import NavBarMobile from '../components/NavBar/navBar'
 import TopBar from '../components/TopBar/TopBar'
+import NoPhotoPlaceholder from '../images/no-image-car.webp'
 
 export default function Home(data) {
   return (
-    <div className='flex flex-col bg-slate-200'>
+    <div className='flex flex-col bg-slate-200 pb-12'>
       <TopBar/>
       <HomeContent data={data}/>
       <NavBarMobile/>
