@@ -6,25 +6,25 @@ import Logo from '../components/Logo/logo'
 import NavBarMobile from '../components/NavBar/navBar'
 import TopBar from '../components/TopBar/TopBar'
 
-export default function Home(warehouses, cars) {
+export default function Home(data) {
   return (
     <div className='flex flex-col bg-slate-200'>
       <TopBar/>
-      <HomeContent data={warehouses}/>
+      <HomeContent data={data}/>
       <NavBarMobile/>
     </div>
   )
 }
 
 export const getStaticProps = async (context) => {
-  const [warehousesRes] = await Promise.all([
-    fetch(`${process.env.API_DOMAIN}/api/Warehouses`),
+  const [vehiclesRes] = await Promise.all([
+    fetch(`${process.env.API_DOMAIN}/api/Vehicles`),
   ]);
-  const warehouses = await warehousesRes.json();
-  //console.log(warehouses[0]['carsInWarehouse']['vehicles'])
+  const vehicles = await vehiclesRes.json();
+
   return{
       props: {
-          warehouses,
+          vehicles,
       }
   }
 }
