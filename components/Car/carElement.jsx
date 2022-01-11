@@ -12,7 +12,7 @@ const CarElement = ({car, className}) => {
                 </p>
             </div>
             <div className="basis-1/2">
-                <p className="text-xs">
+                <p className="text-xs float-right">
                     {`Added on: ${car.dateAdded.substring(0, 10)}`}
                 </p>
             </div>
