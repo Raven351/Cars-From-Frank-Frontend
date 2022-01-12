@@ -6,6 +6,7 @@ import AddToCartImage from '../../images/bxs-cart-add.svg'
 
 
 const CarDetails = ({data}) => {
+    console.log(data.cart)
     return(
         <div className="flex flex-col">
             <Image src={NoImageCar} alt="Car image" className={"z-[-10]"}/>
@@ -23,7 +24,9 @@ const CarDetails = ({data}) => {
                     </div>
 
                 </div>
-                <div className="bg-green-400 h-8 rounded-md flex place-content-center">
+                <div className="bg-green-400 h-8 rounded-md flex place-content-center" onClick={
+                    () => data.onAddCarToCart(data.vehicle)
+                    }>
                     <Image src={AddToCartImage} alt="Add to cart"/>
                 </div>
                 <div className="bg-neutral-200 h-auto p-2">

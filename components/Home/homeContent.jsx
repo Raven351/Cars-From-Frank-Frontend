@@ -1,7 +1,7 @@
 import React from "react";
 import CarElement from '../../components/Car/carElement'
 
-const HomeContent = ({data}) => {
+const HomeContent = ({data, onAddCarToCart}) => {
     return (
         <div className="bg-slate-200 snap-y mb-8">
             {

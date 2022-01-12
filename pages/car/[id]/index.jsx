@@ -3,14 +3,14 @@ import TopBar from '../../../components/TopBar/TopBar'
 import NavBar from '../../../components/NavBar/navBar'
 import CarDetails from '../../../components/Car/CarDetails'
 
-const CarPage = (data) => {
+const CarPage = (data, onAddCarToCart) => {
     const router = useRouter()
     const { id } = router.query
 
     return (
         <div className='flex flex-col pb-24 '>
             <TopBar/>
-            <CarDetails data = {data}/>
+            <CarDetails data = {data} onAddCarToCart = {onAddCarToCart}/>
             <NavBar/>
         </div>
     )
