@@ -1,5 +1,5 @@
 import {useRouter} from 'next/router'
-import TopBarCar from '../../../components/TopBar/TopBarCar'
+import TopBar from '../../../components/TopBar/TopBar'
 import NavBar from '../../../components/NavBar/navBar'
 import CarDetails from '../../../components/Car/CarDetails'
 
@@ -9,7 +9,7 @@ const CarPage = (data) => {
 
     return (
         <div className='flex flex-col pb-24 '>
-            <TopBarCar/>
+            <TopBar/>
             <CarDetails data = {data}/>
             <NavBar/>
         </div>

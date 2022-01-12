@@ -1,6 +1,8 @@
 import Image from "next/image"
 import ImageTemplate from "../Images/ImageTemplate"
 import NoImageCar from '../../images/no-image-car.webp'
+import Link from "next/link"
+import AddToCartImage from '../../images/bxs-cart-add.svg'
 
 
 const CarDetails = ({data}) => {
@@ -8,18 +10,32 @@ const CarDetails = ({data}) => {
         <div className="flex flex-col">
             <Image src={NoImageCar} alt="Car image" className={"z-[-10]"}/>
             <div className="px-6 flex flex-col gap-1 grow">
-                <p className="text-lg">{data.vehicle.make} {data.vehicle.model}</p>
-                <p className="" >{data.vehicle.price} PLN</p>
+                <div className="flex">
+                    <div className="basis-1/2">
+                        <p className="text-lg">{data.vehicle.make} {data.vehicle.model}</p>
+                        <p className="text-rose-700" >{data.vehicle.price} PLN</p>
+                    </div>
+                    <div className="basis-1/2 flex flex-col items-end place-content-center text-sky-600">
+                        <Link href={`https://www.google.com/maps/@${data.vehicle.location.latitude},${data.vehicle.location.longitude},13z`} passHref>
+                            <p className="text-xs right-0 ">{data.vehicle.garageName}</p>
+                        </Link>
+                        <p className="text-xs right-0">{data.vehicle.carsLocation}</p>
+                    </div>
+
+                </div>
+                <div className="bg-green-400 h-8 rounded-md flex place-content-center">
+                    <Image src={AddToCartImage} alt="Add to cart"/>
+                </div>
                 <div className="bg-neutral-200 h-auto p-2">
                     <div className="flex">
                         <div className="basis-1/2">
                             <p className="text-[11px]">Year produced: {data.vehicle.yearModel}</p>
                             <p className="text-[11px]">Licensed: {data.vehicle.isLicensed? "Yes" : "No"}</p>
-                            <p className="text-[11px]">Transmission type: </p>
+                            <p className="text-[11px]">Transmission type: {RandomTransmission()}</p>
                         </div>
                         <div className="basis-1/2">
-                            <p className="text-[11px]">Fuel type: </p>
-                            <p className="text-[11px]">Mileage: </p>
+                            <p className="text-[11px]">Fuel type: {RandomFuel()}</p>
+                            <p className="text-[11px]">Mileage: {RandomMileage()} km</p>
                         </div>
                     </div>
                 </div>
@@ -37,3 +53,18 @@ const CarDetails = ({data}) => {
 }
 
 export default CarDetails
+
+const RandomTransmission = () => {
+    let randomNum = Math.floor(Math.random() * 2) + 1
+    if (randomNum % 2) return "Manual"
+    else return "Automatic"
+}
+
+const RandomFuel = () => {
+    let randomNum = Math.floor(Math.random() * 2) + 1
+    if (randomNum % 2) return "Gasoline"
+    else return "Diesel"
+}
+const RandomMileage = () => {
+    return Math.floor(Math.random() * 300000) + 100000
+}
