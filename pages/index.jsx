@@ -1,13 +1,6 @@
-import { GetServerSideProps, GetStaticProps } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import { useState } from 'react'
 import HomeContent from '../components/Home/homeContent'
-import Logo from '../components/Logo/logo'
 import NavBarMobile from '../components/NavBar/navBar'
 import TopBar from '../components/TopBar/TopBar'
-import NoPhotoPlaceholder from '../images/no-image-car.webp'
-import CartContext from '../contexts/CartContext'
 
 export default function Home(data) {
 

@@ -1,4 +1,3 @@
-import Link from "next/link"
 import CartElement from "./CartElement"
 import CartTotalCounter from "./CartTotalCounter"
 

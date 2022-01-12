@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import CartContext from '../contexts/CartContext'
 import { useState } from 'react'
 
+///Core component. Provides global states to components inside pages folder.
 function MyApp({ Component, pageProps }) {
   
   const [cart, setCart] = useState([])
@@ -16,7 +17,6 @@ function MyApp({ Component, pageProps }) {
       setCart(cart => cart.filter(item => item.id !== car.id))
     }
   }
-
 
   return (
     <Component 
