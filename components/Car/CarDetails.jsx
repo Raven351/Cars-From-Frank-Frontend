@@ -24,9 +24,14 @@ const CarDetails = ({data}) => {
                     </div>
 
                 </div>
-                <div className="bg-green-400 h-8 rounded-md flex place-content-center" onClick={
-                    () => data.onAddCarToCart(data.vehicle)
-                    }>
+                <div 
+                className=
+                {`
+                ${data.cart.some(carInCart => carInCart.id === data.vehicle.id) ? "bg-red-400" : "bg-green-400"} 
+                h-8 rounded-md flex place-content-center
+                `} 
+                onClick={ () => data.onAddCarToCart(data.vehicle)}
+                >
                     <Image src={AddToCartImage} alt="Add to cart"/>
                 </div>
                 <div className="bg-neutral-200 h-auto p-2">

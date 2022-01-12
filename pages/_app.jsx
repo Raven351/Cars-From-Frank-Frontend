@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   
   const [cart, setCart] = useState([])
   const onAddCarToCart = (car) => {
-    if (cart.filter(carInCart => carInCart.Id === car.Id).length > 0) console.log("Car already in cart")
+    if (cart.some(carInCart => carInCart.id === car.id)) console.log("Car already in cart")
     else setCart(cart => [...cart, car])
   }
 
