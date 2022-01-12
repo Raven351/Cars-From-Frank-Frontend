@@ -11,7 +11,7 @@ const CarPage = (data, onAddCarToCart) => {
         <div className='flex flex-col pb-24 '>
             <TopBar/>
             <CarDetails data = {data} onAddCarToCart = {onAddCarToCart}/>
-            <NavBar/>
+            <NavBar data = {data}/>
         </div>
     )
 }

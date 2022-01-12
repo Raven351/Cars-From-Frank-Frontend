@@ -15,7 +15,7 @@ export default function Home(data) {
     <div className='flex flex-col bg-slate-200 pb-12'>
       <TopBar/>
       <HomeContent data={data}/>
-      <NavBarMobile/>
+      <NavBarMobile data = {data}/>
     </div>
   )
 }
