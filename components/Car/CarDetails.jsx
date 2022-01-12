@@ -3,6 +3,7 @@ import ImageTemplate from "../Images/ImageTemplate"
 import NoImageCar from '../../images/no-image-car.webp'
 import Link from "next/link"
 import AddToCartImage from '../../images/bxs-cart-add.svg'
+import isCarInCart from "../../functions/isCarInCart"
 
 
 const CarDetails = ({data}) => {
@@ -22,15 +23,17 @@ const CarDetails = ({data}) => {
                         </Link>
                         <p className="text-xs right-0">{data.vehicle.carsLocation}</p>
                     </div>
-
                 </div>
                 <div 
                 className=
                 {`
-                ${data.cart.some(carInCart => carInCart.id === data.vehicle.id) ? "bg-red-400" : "bg-green-400"} 
+                ${isCarInCart(data.cart, data.vehicle) ? "bg-red-400" : "bg-green-400"} 
                 h-8 rounded-md flex place-content-center
                 `} 
-                onClick={ () => data.onAddCarToCart(data.vehicle)}
+                onClick={ () => {
+                    if (!isCarInCart(data.cart, data.vehicle)) data.onAddCarToCart(data.vehicle)
+                    else data.onRemoveCarFromCart(data.vehicle)
+                }}
                 >
                     <Image src={AddToCartImage} alt="Add to cart"/>
                 </div>
@@ -61,6 +64,8 @@ const CarDetails = ({data}) => {
 }
 
 export default CarDetails
+
+
 
 const RandomTransmission = () => {
     let randomNum = Math.floor(Math.random() * 2) + 1

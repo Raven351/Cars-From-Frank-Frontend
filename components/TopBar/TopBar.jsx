@@ -12,9 +12,6 @@ const TopBar = () => {
             <div className="basis-2/5"/>
             <div className="flex flex-row-reverse basis-1/5 self-center space-x-3 space-x-reverse place-content-center">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 relative">
-                    <ChangeViewButton 
-                    src = "/bxs-cart.svg" 
-                    alt = "Change view to simple list"/>
                 </div>
             </div>
         </header>
