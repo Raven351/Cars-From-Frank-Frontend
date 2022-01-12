@@ -4,6 +4,7 @@ import NoImageCar from '../../images/no-image-car.webp'
 import Link from "next/link"
 import AddToCartImage from '../../images/bxs-cart-add.svg'
 import isCarInCart from "../../functions/isCarInCart"
+import moneyFormatter from "../../functions/moneyFormatter"
 
 
 const CarDetails = ({data}) => {
@@ -14,7 +15,7 @@ const CarDetails = ({data}) => {
                 <div className="flex">
                     <div className="basis-1/2">
                         <p className="text-lg">{data.vehicle.make} {data.vehicle.model}</p>
-                        <p className="text-rose-700" >{data.vehicle.price} PLN</p>
+                        <p className="text-rose-700" >{moneyFormatter(data.vehicle.price)}</p>
                     </div>
                     <div className="basis-1/2 flex flex-col items-end place-content-center text-sky-600">
                         <Link href={`https://www.google.com/maps/@${data.vehicle.location.latitude},${data.vehicle.location.longitude},13z`} passHref>

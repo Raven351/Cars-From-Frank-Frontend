@@ -1,3 +1,4 @@
+import moneyFormatter from "../../functions/moneyFormatter"
 
 
 const CartTotalCounter = ({cart}) => {
@@ -6,7 +7,7 @@ const CartTotalCounter = ({cart}) => {
             <p className="text-xs">Cars saved in cart: {cart.length}</p>
             <div className="grow flex">
                 <p>TOTAL: </p>
-                <p className="grow place-self-end text-right">{sumCartTotalValue(cart)}</p> 
+                <p className="grow place-self-end text-right">{moneyFormatter(sumCartTotalValue(cart))}</p> 
             </div>
         </div>
     )

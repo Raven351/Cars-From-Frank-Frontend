@@ -5,7 +5,7 @@ import CartContent from "../../components/Cart/CartContent"
 const Cart = (props) => {
     console.log(props.cart)
     return (
-        <div className='flex flex-col pb-12'>
+        <div className='flex flex-col pb-24'>
             <TopBar/>
             <CartContent props={props}/>
             <NavBarMobile data = {props}/>

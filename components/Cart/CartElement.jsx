@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import RemoveImage from '../../images/bxs-no-entry.svg'
+import moneyFormatter from "../../functions/moneyFormatter"
 
 const CartElement = ({cartItem, onRemoveCarFromCart}) => {
     return (
@@ -13,7 +14,7 @@ const CartElement = ({cartItem, onRemoveCarFromCart}) => {
             </Link>
             <Link href={`/car/${cartItem.id}`} passHref>
                 <div className="flex flex-row-reverse grow pr-3">
-                    <p className="">{cartItem.price} PLN</p>
+                    <p className="">{moneyFormatter(cartItem.price)}</p>
                 </div>
             </Link>
             <div className="pt-2" onClick={() => onRemoveCarFromCart(cartItem)}>
