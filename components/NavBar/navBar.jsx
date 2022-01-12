@@ -17,11 +17,14 @@ const NavBarMobile = ({data}) => {
                     </div>
                 </div>
             </Link>
-            <div className={`basis-1/3 h-full flex place-content-center ${data.cart.length > 0 ? "bg-amber-300" : ""} rounded-r`}>
-                <div className="relative h-6 w-6 mt-3 ">
-                    <NavBarButton src = "/bxs-cart.svg"/>
+            <Link href={'/cart'} passHref>
+                <div className={`basis-1/3 h-full flex place-content-center ${data.cart.length > 0 ? "bg-amber-300" : ""} rounded-r`}>
+                    <div className="relative h-6 w-6 mt-3 ">
+                        <NavBarButton src = "/bxs-cart.svg"/>
+                    </div>
                 </div>
-            </div>
+            </Link>
+
         </div>
     )
 }

@@ -3,7 +3,7 @@ import CarElement from '../../components/Car/carElement'
 
 const HomeContent = ({data, onAddCarToCart}) => {
     return (
-        <div className="bg-slate-200 snap-y mb-8">
+        <div className="snap-y mb-8">
             {
             data.vehicles.map(car => (
                 <CarElement key={car.id} car = {car} className = "m-2"/>

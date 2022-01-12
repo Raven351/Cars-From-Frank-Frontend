@@ -12,7 +12,7 @@ import CartContext from '../contexts/CartContext'
 export default function Home(data) {
 
   return (
-    <div className='flex flex-col bg-slate-200 pb-12'>
+    <div className='flex flex-col pb-12'>
       <TopBar/>
       <HomeContent data={data}/>
       <NavBarMobile data = {data}/>

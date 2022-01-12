@@ -7,7 +7,6 @@ import isCarInCart from "../../functions/isCarInCart"
 
 
 const CarDetails = ({data}) => {
-    console.log(data.cart)
     return(
         <div className="flex flex-col">
             <Image src={NoImageCar} alt="Car image" className={"z-[-10]"}/>
