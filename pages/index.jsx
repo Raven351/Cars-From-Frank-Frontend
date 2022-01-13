@@ -16,7 +16,12 @@ export default function Home(data) {
 
 export const getStaticProps = async (context) => {
   const [vehiclesRes] = await Promise.all([
-    fetch(`${process.env.API_DOMAIN}/api/Vehicles`),
+    fetch(`${process.env.API_DOMAIN}/api/Vehicles`, {
+      headers:{
+        'Ocp-Apim-Subscription-Key': `${process.env.API_KEY}`,
+        'Ocp-Apim-Trace': `${process.env.APIM_TRACE}`
+      }
+    }),
   ]);
   const vehicles = await vehiclesRes.json();
 
