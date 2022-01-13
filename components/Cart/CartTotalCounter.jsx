@@ -1,6 +1,5 @@
 import moneyFormatter from "../../functions/moneyFormatter"
 
-
 const CartTotalCounter = ({cart}) => {
     return(
         <div className="p-3 m-2 border border-solid border-rose-700 border-4 bg-amber-300">

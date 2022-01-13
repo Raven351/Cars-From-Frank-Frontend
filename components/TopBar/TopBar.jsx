@@ -5,8 +5,8 @@ import ChangeViewButton from '../Buttons/ChangeViewButton'
 
 const TopBar = () => {
     return(
-        <header className="flex flex-row items-stretch p-5 sticky top-0 bg-white rounded-b-lg shadow-lg z-50">
-            <div className="basis-2/5">
+        <header className="flex flex-row items-stretch p-5 sticky top-0 bg-white rounded-b-lg shadow-lg z-50 max-h-16">
+            <div className="basis-2/5 relative">
                 <Logo/>
             </div>
             <div className="basis-2/5"/>

@@ -8,7 +8,7 @@ import CarDetailsDescription from "./CarDetailsDescription"
 const CarDetails = ({data}) => {
     return(
         <div className="flex flex-col">
-            <Image src={NoImageCar} alt="Car image" className={"z-[-10]"}/>
+            <Image src={NoImageCar} alt="Car image" className={"z-[-10]"} objectFit="contain"/>
             <div className="px-6 flex flex-col gap-1 grow">
                 <CarDetailsHeader data = {data}/>
                 <CarAddRemoveCartButton data = {data}/>

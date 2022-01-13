@@ -24,7 +24,6 @@ const NavBarMobile = ({data}) => {
                     </div>
                 </div>
             </Link>
-
         </div>
     )
 }

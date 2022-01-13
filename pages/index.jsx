@@ -1,15 +1,16 @@
 import HomeContent from '../components/Home/homeContent'
+import IndexPageWrapper from '../components/IndexPageWrapper'
 import NavBarMobile from '../components/NavBar/navBar'
 import TopBar from '../components/TopBar/TopBar'
 
 export default function Home(data) {
 
   return (
-    <div className='flex flex-col pb-12'>
-      <TopBar/>
-      <HomeContent data={data}/>
-      <NavBarMobile data = {data}/>
-    </div>
+        <IndexPageWrapper>
+          <TopBar/>
+          <HomeContent data={data}/>
+          <NavBarMobile data = {data}/>
+        </IndexPageWrapper>
   )
 }
 

@@ -2,17 +2,18 @@ import {useRouter} from 'next/router'
 import TopBar from '../../../components/TopBar/TopBar'
 import NavBar from '../../../components/NavBar/navBar'
 import CarDetails from '../../../components/Car/CarDetails'
+import IndexPageWrapper from '../../../components/IndexPageWrapper'
 
 const CarPage = (data, onAddCarToCart, onRemoveCarFromCart) => {
     const router = useRouter()
     const { id } = router.query
 
     return (
-        <div className='flex flex-col pb-24 '>
+        <IndexPageWrapper>
             <TopBar/>
             <CarDetails data = {data} onAddCarToCart = {onAddCarToCart} onRemoveCarFromCart = {onRemoveCarFromCart}/>
             <NavBar data = {data}/>
-        </div>
+        </IndexPageWrapper>
     )
 }
 
