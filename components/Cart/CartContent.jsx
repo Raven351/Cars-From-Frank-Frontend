@@ -12,7 +12,7 @@ const CartContent = ({props}) => {
             </div>
         )
     else return (
-        <div className="flex flex-col grow justify-center h-[75vh]">
+        <div className="flex flex-col grow justify-center h-[75vh] w-screen max-w-6xl">
             <p className="text-center self-center text-4xl text-zinc-300">
                 {"There are no cars in your cart :< "}
             </p>

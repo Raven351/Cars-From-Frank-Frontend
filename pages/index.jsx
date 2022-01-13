@@ -8,7 +8,7 @@ export default function Home(data) {
   return (
         <IndexPageWrapper>
           <TopBar/>
-          <HomeContent data={data}/>
+          <HomeContent data={data} cart = {data.cart}/>
           <NavBarMobile data = {data}/>
         </IndexPageWrapper>
   )

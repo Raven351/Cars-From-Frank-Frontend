@@ -5,7 +5,7 @@ import moneyFormatter from "../../functions/moneyFormatter"
 
 const CartElement = ({cartItem, onRemoveCarFromCart}) => {
     return (
-        <div className="m-2 flex flex-row p-3 border-solid border-2 border-rose-700 place-items-center">
+        <div className="m-2 flex flex-row p-3 border-solid border-2 border-rose-700 place-items-center cursor-pointer hover:bg-red-100">
             <Link href={`/car/${cartItem.id}`} passHref>
                 <div>
                     <p>{`${cartItem.make}`}</p>
@@ -17,7 +17,7 @@ const CartElement = ({cartItem, onRemoveCarFromCart}) => {
                     <p className="">{moneyFormatter(cartItem.price)}</p>
                 </div>
             </Link>
-            <div className="pt-2" onClick={() => onRemoveCarFromCart(cartItem)}>
+            <div className="pt-2 cursor-pointer" onClick={() => onRemoveCarFromCart(cartItem)}>
                 <Image src = {RemoveImage} alt="Remove"/>
             </div>    
         </div>
