@@ -18,7 +18,7 @@ const NavBarMobile = ({data}) => {
                 </div>
             </Link>
             <Link href={'/cart'} passHref>
-                <div className={`basis-1/3 h-full flex place-content-center cursor-pointer hover:bg-red-600 ${data.cart.length > 0 ? "bg-amber-300" : ""} rounded-r`}>
+                <div className={`basis-1/3 h-full flex place-content-center cursor-pointer hover:bg-red-600 ${typeof cart != "undefined" ? (data.cart.length > 0 ? "bg-amber-300" : "") : ""} rounded-r`}>
                     <div className="relative h-6 w-6 mt-3 ">
                         <NavBarButton src = "/bxs-cart.svg"/>
                     </div>

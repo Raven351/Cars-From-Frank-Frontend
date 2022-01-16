@@ -30,6 +30,8 @@ const CarElement = ({car, cart}) => {
 export default CarElement
 
 const isCarInCart = (cart, car) => {
-    if (cart.some(carInCart => carInCart.id === car.id)) return true
-    else return false
+    if (typeof cart != "undefined"){
+        if (cart.some(carInCart => carInCart.id === car.id)) return true
+    }
+    return false
 }
